@@ -21,7 +21,7 @@ public class CloneScript : MonoBehaviour
         if (isCollision)
         {
             transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
-            if (colSphere.transform.localScale.x <= transform.localScale.x)
+            if (colSphere.transform.localScale.x* colSphere.transform.parent.localScale.x <= transform.localScale.x)
             {
                 isScore = true;
                 Destroy(this.gameObject);
@@ -38,6 +38,14 @@ public class CloneScript : MonoBehaviour
             colSphere = other.gameObject;
         }
         else
+        {
+            isCollision = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "CollisionSphere")
         {
             isCollision = false;
         }
