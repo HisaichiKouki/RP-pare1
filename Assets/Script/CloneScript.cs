@@ -7,7 +7,7 @@ public class CloneScript : MonoBehaviour
 {
     private bool isCollision;
     private GameObject colSphere;
-    private bool isScore;
+    //private bool isScore;
 
     // Start is called before the first frame update
     void Start()
@@ -21,18 +21,18 @@ public class CloneScript : MonoBehaviour
         if (isCollision)
         {
             transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
-            if (colSphere.transform.localScale.x* colSphere.transform.parent.localScale.x <= transform.localScale.x)
-            {
-                isScore = true;
-                Destroy(this.gameObject);
-            }
+
+            //if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) <= transform.localScale.x)
+            //{
+            //    isScore = true;
+            //}
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
         Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag== "CollisionSphere")
+        if (other.gameObject.tag == "CollisionSphere")
         {
             isCollision = true;
             colSphere = other.gameObject;
@@ -48,5 +48,5 @@ public class CloneScript : MonoBehaviour
         }
     }
 
-  
+    //private bool GetIsScore() { return isScore; }
 }
