@@ -21,16 +21,21 @@ public class PlayerScript : MonoBehaviour
     public float kStopTime;//ショット後プレイヤーの動きを止める時間
     float stopCount;
     GameObject shotPosition;
+
+    float scale;//speedやdistanceをスケールに合わせて調整する
+
+    public float GetScale() { return scale; }
     // Start is called before the first frame update
     void Start()
     {
+        scale = transform.localScale.x;
+
         rigidbody_ = GetComponent<Rigidbody>();
 
         //クローン生成場所を子から参照してる。0から数える
         shotPosition = transform.GetChild(2).gameObject;
         shotCount = 0;
         stopCount = 0;
-
     }
 
     // Update is called once per frame
@@ -54,8 +59,6 @@ public class PlayerScript : MonoBehaviour
             GameObject clon = Instantiate(cloneObj);
             clon.transform.position = shotPosition.transform.position;
             clon.GetComponent<Rigidbody>().velocity = rigidbody_.velocity * shotSpeed;
-            rigidbody_.velocity = Vector3.zero;
-
             shotCount = kShotCoolTime;
             stopCount = kStopTime;
         }
@@ -70,7 +73,7 @@ public class PlayerScript : MonoBehaviour
         }
         //0以上ならプレイヤーの動きを止める
         stopCount -= Time.deltaTime;
-        rigidbody_.velocity = Vector3.zero;
+        rigidbody_.velocity = new Vector3(0, rigidbody_.velocity.y, 0);
     }
     private void Move()
     {
