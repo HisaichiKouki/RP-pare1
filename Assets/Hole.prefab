@@ -90,75 +90,13 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
       insertIndex: 0
       addedObject: {fileID: 6936429389513755861}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5037495097360256858}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
 --- !u!4 &4803105719031776635 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
   m_PrefabInstance: {fileID: 4981744564205527696}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5324345030611640257 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
-  m_PrefabInstance: {fileID: 4981744564205527696}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5037495097360256858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5324345030611640257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 923a2ee84c9e97d429c65882efb4f252, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  meshColliderBuilderProperty:
-    splitProperty:
-      splitMaterialEnabled: 1
-      splitPrimitiveEnabled: 1
-      splitPolygonNormalEnabled: 0
-      splitPolygonNormalAngle: 45
-    reducerProperty:
-      shapeType: 2
-      fitType: 0
-      meshType: 3
-      maxTriangles: 255
-      sliceMode: 0
-      scale: {x: 1, y: 1, z: 1}
-      scaleElementType: 0
-      minThickness: {x: 0.01, y: 0.01, z: 0.01}
-      minThicknessElementType: 0
-      optimizeRotation:
-        x: 1
-        y: 1
-        z: 1
-      optimizeRotationElementType: 0
-      colliderToChild: 0
-      offset: {x: 0, y: 0, z: 0}
-      thicknessA: {x: 0, y: 0, z: 0}
-      thicknessB: {x: 0, y: 0, z: 0}
-      viewAdvanced: 0
-    colliderProperty:
-      convex: 1
-      isTrigger: 0
-      material: {fileID: 0}
-      isCreateAsset: 0
-    rigidbodyProperty:
-      mass: 1
-      drag: 0
-      angularDrag: 0.05
-      isKinematic: 1
-      useGravity: 0
-      interpolation: 0
-      collisionDetectionMode: 0
-      isCreate: 1
-      viewAdvanced: 0
-    modifyNameEnabled: 1
 --- !u!1001 &6817151308940165704
 PrefabInstance:
   m_ObjectHideFlags: 0
