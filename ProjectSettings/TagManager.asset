@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CollisionSphere
   - Hole
+  - Clone
   layers:
   - Default
   - TransparentFX
