@@ -48,11 +48,5 @@ public class CloneScript : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "CollisionSphere")
-        {
-            isCollision = false;
-        }
-    }
+  
 }
