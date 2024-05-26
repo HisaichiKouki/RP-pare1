@@ -4,34 +4,22 @@ using UnityEngine;
 
 public class HoleScript : MonoBehaviour
 {
-    [SerializeField] int KrespawnTime;
-    [SerializeField] int respawnTime;
-
-    GameObject clone;
-    GameObject colSphere;
+    private bool isScored = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        colSphere = gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if ((colSphere.transform.localScale.x * transform.localScale.x) <= clone.transform.localScale.x)
+        if (isScored)
         {
-            gameObject.SetActive(false);
-            Destroy(clone.gameObject);
+            Destroy(gameObject);
         }
     }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Clone")
-        {
-            clone = other.gameObject;
-        }
-    }
+    public void SetIsScored(bool isScored) { this.isScored = isScored; }
+    public bool IsScored() { return this.isScored; }
 }
