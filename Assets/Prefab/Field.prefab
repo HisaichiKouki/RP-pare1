@@ -46,3 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   kRespawnTIme: 2
   Hole1: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+  Box: {fileID: 8031128671128917257, guid: 8f31f6ea509c7964ca0d01a9de7343b3, type: 3}
