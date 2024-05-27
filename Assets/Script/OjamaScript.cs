@@ -20,7 +20,18 @@ public class OjamaScript : MonoBehaviour
     public void InitPosDire(Vector3 pos, Vector2 dire)
     {
         transform.position = pos;        
-        moveDirection = dire.normalized;
+        moveDirection = dire;
+        if (Mathf.Abs(moveDirection.x) > Mathf.Abs(moveDirection.y))
+        {
+            moveDirection.y = 0;
+        }else if (Mathf.Abs(moveDirection.x) < Mathf.Abs(moveDirection.y))
+        {
+            moveDirection.x = 0;
+        }else
+        {
+            moveDirection=Vector2.one;
+        }
+        moveDirection = moveDirection.normalized*kMoveSpeed;
         
     }
     public void SetMoveDire(Vector2 direction) { moveDirection = direction; }
@@ -28,7 +39,7 @@ public class OjamaScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        moveDirection.x = 1;//テスト用。実際にはInitで場所と移動方向を決める。
+        //moveDirection.x = 1;//テスト用。実際にはInitで場所と移動方向を決める。
     }
 
     // Update is called once per frame
@@ -40,7 +51,7 @@ public class OjamaScript : MonoBehaviour
         }
         else
         {
-            moveDirection *= kMoveSpeed;
+          
             Vector3 velocity = new Vector3(moveDirection.x, 0, moveDirection.y);
             rb.velocity = velocity;
         }
