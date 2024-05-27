@@ -48,6 +48,7 @@ public class PlayerScript : MonoBehaviour
     }
     void Shot()
     {
+
         //クールタイムが残ってたらリターン
         if (shotCount >= 0)
         {
