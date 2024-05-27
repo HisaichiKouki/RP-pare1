@@ -8,9 +8,12 @@ public class CloneScript : MonoBehaviour
 {
     private bool isCollision;
     private GameObject colSphere;
-    //private bool isScore;
+    private GameObject field;
+    private bool isScored;
 
-   // public static HoleScript instance;
+    [SerializeField] bool isChange = true;
+
+    // public static HoleScript instance;
 
     // Start is called before the first frame update
     void Start()
@@ -23,13 +26,33 @@ public class CloneScript : MonoBehaviour
     {
         if (isCollision)
         {
-            transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+            //if (isChange == false)
+            //{
+            //    transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
 
-            if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) <= transform.localScale.x)
+            //    if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) <= transform.localScale.x)
+            //    {
+            //        colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
+            //        Destroy(this.gameObject);
+            //    }
+            //}
+            if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) >= transform.localScale.x)
             {
-                colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
-                Destroy(this.gameObject);
+                transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+
+                //colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
+                //Destroy(this.gameObject);
             }
+            else
+            {
+                if (isScored)
+                {
+                    Destroy(this.gameObject);
+                }
+            }
+
+            isScored = field.GetComponent<FieldScript>().IsScored();
+
         }
     }
 
@@ -41,16 +64,20 @@ public class CloneScript : MonoBehaviour
             isCollision = true;
             colSphere = other.gameObject;
         }
+        if (other.gameObject.tag == "Field")
+        {
+            field = other.gameObject;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-       // Debug.Log(other.gameObject.tag);
+        // Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "CollisionSphere")
         {
             isCollision = false;
         }
     }
 
-    //private bool GetIsScore() { return isScore; }
+    public void SetIsScored(bool isScored) { this.isScored = isScored; }
 }
