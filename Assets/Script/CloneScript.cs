@@ -9,8 +9,10 @@ public class CloneScript : MonoBehaviour
     private bool isCollision;
     private GameObject colSphere;
     private GameObject field;
-    private bool isScored;
+    private FieldScript fieldScript;
 
+    private bool isScored;
+    float holeSize;
     [SerializeField] bool isChange = true;
 
     // public static HoleScript instance;
@@ -18,7 +20,8 @@ public class CloneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        field = GameObject.FindWithTag("Field");
+        fieldScript=field.GetComponent<FieldScript>();
     }
 
     // Update is called once per frame
@@ -36,27 +39,35 @@ public class CloneScript : MonoBehaviour
             //        Destroy(this.gameObject);
             //    }
             //}
-            if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) >= transform.localScale.x)
+             holeSize = colSphere.transform.localScale.x;
+            holeSize -= 0.02f;//ägëÂÉTÉCÉYÇè≠Çµè¨Ç≥Ç≠ÇµÇƒÉKÉNÉKÉNÇµÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈ
+            if (transform.localScale.x< holeSize)
             {
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
-
+                Debug.Log("expansion ");
                 //colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
                 //Destroy(this.gameObject);
+                //
             }
             else
             {
+                if (transform.localScale.x > holeSize)
+                {
+                    transform.localScale = new Vector3(holeSize, holeSize, holeSize);
+                }
+                
                 if (isScored)
                 {
                     Destroy(this.gameObject);
                 }
             }
 
-            isScored = field.GetComponent<FieldScript>().IsScored();
-
+            isScored = fieldScript.IsScored();
+           
         }
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.gameObject.tag);
         if (other.gameObject.tag == "CollisionSphere")
@@ -64,10 +75,10 @@ public class CloneScript : MonoBehaviour
             isCollision = true;
             colSphere = other.gameObject;
         }
-        if (other.gameObject.tag == "Field")
-        {
-            field = other.gameObject;
-        }
+        //if (other.gameObject.tag == "Field")
+        //{
+        //    field = other.gameObject;
+        //}
     }
 
     private void OnTriggerExit(Collider other)

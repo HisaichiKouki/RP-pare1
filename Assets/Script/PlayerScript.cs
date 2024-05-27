@@ -100,6 +100,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    //この関数でスクリプト外からジャンプする
     public void ObjectJump(float setJumpPower) { rigidbody_.velocity = new Vector3(rigidbody_.velocity.x, setJumpPower, rigidbody_.velocity.z); }
     public void SetJumpPower(float jumpPower) { this.jumpPower = jumpPower; }
 }
