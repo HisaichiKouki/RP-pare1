@@ -715,6 +715,10 @@ PrefabInstance:
       propertyPath: burstPower.y
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6756561002535665761, guid: a38ebb62b2aeed2428c53aee29867668, type: 3}
+      propertyPath: description1
+      value: "x\u304C\u9032\u884C\u65B9\u5411\u306E\u5439\u3063\u98DB\u3073\u3001y\u304C\u4E0A\u65B9\u5411\u306E\u5439\u3063\u98DB\u3073"
+      objectReference: {fileID: 0}
     - target: {fileID: 7781353602481869161, guid: a38ebb62b2aeed2428c53aee29867668, type: 3}
       propertyPath: m_Enabled
       value: 1

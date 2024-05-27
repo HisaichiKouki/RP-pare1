@@ -8,6 +8,8 @@ public class OjamaScript : MonoBehaviour
 
     public float kMoveSpeed;
     private Vector2 moveDirection;
+    [Header("ê‡ñæ")]
+    [SerializeField, TextArea] string description1;
     public Vector2 burstPower;
     Rigidbody rb;
 
@@ -60,9 +62,9 @@ public class OjamaScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("burst");
         if (other.gameObject.tag == "Clone")
         {
+            Debug.Log("burst");
 
 
             Vector3 burstVector = new Vector3(moveDirection.x * burstPower.x, burstPower.y, moveDirection.y * burstPower.x);
