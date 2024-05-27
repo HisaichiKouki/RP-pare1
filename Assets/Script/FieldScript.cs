@@ -35,12 +35,14 @@ public class FieldScript : MonoBehaviour
         {
             for (int j = 0; j < kFieldCols; j++)
             {
+                //field[j, i].GetComponent<HoleScript>().SetIsScored(isScored);
                 if (field[j, i] == null)
                 {
                     if (respawnTime[j, i] == 0)
                     {
                         boxField[j, i] = Instantiate(Box, new Vector3(j * 2 - kFieldCols, 0, i * 2 - kFieldRows), Quaternion.identity);
                         boxField[j, i].transform.SetParent(transform, false);
+                        isScored = false;
                     }
                     respawnTime[j, i] += Time.deltaTime;
                     if (respawnTime[j, i] >= kRespawnTIme)
@@ -54,6 +56,8 @@ public class FieldScript : MonoBehaviour
                 {
                     Destroy(boxField[j, i]);
                 }
+
+                field[j, i].GetComponent<HoleScript>().SetIsScored(isScored);
             }
         }
     }
@@ -78,20 +82,5 @@ public class FieldScript : MonoBehaviour
         }
     }
 
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        isScored = true;
-    //        collision.rigidbody.GetComponent<PlayerScript>().SetJumpPower(20);
-    //    }
-    //}
-
-    //private void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //    {
-    //        isScored = false;
-    //    }
-    //}
+    public bool IsScored (){ return isScored; }
 }
