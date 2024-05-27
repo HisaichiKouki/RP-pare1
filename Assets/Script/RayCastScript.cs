@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class PlayerRayCast : MonoBehaviour
+public class RayCastScript : MonoBehaviour
 {
+
     public float rayLength;
+    public float rayDistance;//目標地点から手前に設置して埋まらないように
     public GameObject reticleObj;
 
     float a;
@@ -25,16 +27,18 @@ public class PlayerRayCast : MonoBehaviour
         {
             a++;
         }
+        reticleObj.SetActive(false);
         for (int i = 0; i < hit.Length; i++)
         {
             if (hit[i].collider.CompareTag("HoleCollision1"))
             {
 
-                print("Found an object - distance: " + hit[i].distance);
+                //print("Found an object - distance: " + hit[i].distance);
                 Debug.DrawRay(transform.position, Vector3.down * hit[i].distance, Color.red, 0.0f);
                 Vector3 newPosition = transform.position;
-                newPosition.y -= hit[i].distance;
+                newPosition.y -= hit[i].distance- rayDistance;
                 reticleObj.transform.position = newPosition;
+                reticleObj.SetActive(true);
                 return;
 
             }
