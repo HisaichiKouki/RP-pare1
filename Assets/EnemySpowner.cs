@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemySpowner : MonoBehaviour
 {
     [SerializeField]private GameObject spownObj;
+    public GameObject centerObj;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,8 @@ public class EnemySpowner : MonoBehaviour
             
             Vector3 newPosition = collision.transform.position;
             newPosition.y = 10;
-            Vector2 newDire = new Vector2(-collision.transform.position.x, -collision.transform.position.z);
+            Vector2 newDire = new Vector2(centerObj.transform.position.x- collision.transform.position.x,
+                centerObj.transform.position.y - collision.transform.position.z);
             Debug.Log("newDire" + newDire);
             GameObject spown = Instantiate(spownObj);
             spown.GetComponent<OjamaScript>().InitPosDire(newPosition, newDire);

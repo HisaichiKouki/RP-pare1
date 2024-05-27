@@ -7,7 +7,6 @@ public class OjamaScript : MonoBehaviour
 {
 
     public float kMoveSpeed;
-
     private Vector2 moveDirection;
     public Vector2 burstPower;
     Rigidbody rb;
