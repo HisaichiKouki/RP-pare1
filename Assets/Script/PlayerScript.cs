@@ -34,7 +34,7 @@ public class PlayerScript : MonoBehaviour
         rigidbody_ = GetComponent<Rigidbody>();
 
         //クローン生成場所を子から参照してる。0から数える
-        shotPosition = transform.GetChild(2).gameObject;
+        shotPosition = transform.GetChild(0).gameObject;
         shotCount = 0;
         stopCount = 0;
     }
