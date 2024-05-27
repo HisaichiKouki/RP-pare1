@@ -370,30 +370,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 6534310815687089384}
-  distance: 0
-  shotType: 1
-  easeT: 0.05
---- !u!135 &5059460470687243196
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5628944550163176132}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  distance: 1.5
+  shotType: 0
+  easeT: 0
 --- !u!1 &6534310815687089384
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,7 +452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   description1: "\u30AF\u30ED\u30FC\u30F3\u306F\u5B50\u30AA\u30D6\u30B8\u30A7\u30AF\u30C8\u306EShotPoint\u304B\u3089\u51FA\u308B\u306E\u3067\u6CE8\u610F"
   speed: 300
-  jumpPower: 10
+  jumpPower: 0
   moveType: 0
   description2: "MoveType\u304Ctrue\u306A\u3089AddFoce\u79FB\u52D5\u3001false\u306A\u3089velocity\u79FB\u52D5"
   cloneObj: {fileID: 8706889128484276374, guid: ee12496b4bbbfed4e8cbd516106a9a34, type: 3}

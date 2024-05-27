@@ -13,6 +13,7 @@ public class FieldScript : MonoBehaviour
     float[,] respawnTime = new float[kFieldCols, kFieldRows];
     [SerializeField] GameObject Hole1;
     [SerializeField] GameObject Box;
+    private bool isScored;
 
     // Start is called before the first frame update
     void Start()
@@ -56,4 +57,38 @@ public class FieldScript : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isScored = true;
+            other.GetComponent<PlayerScript>().SetJumpPower(20);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            isScored = false;
+        }
+    }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        isScored = true;
+    //        collision.rigidbody.GetComponent<PlayerScript>().SetJumpPower(20);
+    //    }
+    //}
+
+    //private void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        isScored = false;
+    //    }
+    //}
 }

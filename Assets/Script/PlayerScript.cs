@@ -98,4 +98,6 @@ public class PlayerScript : MonoBehaviour
         }
 
     }
+
+    public void SetJumpPower(float jumpPower) { this.jumpPower = jumpPower; }
 }
