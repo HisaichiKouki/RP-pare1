@@ -63,7 +63,10 @@ public class FieldScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isScored = true;
-            other.GetComponent<PlayerScript>().SetJumpPower(20);
+            //プレイヤーの子のコライダーから親のリジットボディを取得
+            Rigidbody newVelocity = other.transform.parent.GetComponent<Rigidbody>();
+            // 親のリジットボディのvelocityの値を変えてる
+            newVelocity.velocity = new Vector3(newVelocity.velocity.x, 20, newVelocity.velocity.z);
         }
     }
 

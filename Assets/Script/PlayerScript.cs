@@ -100,5 +100,6 @@ public class PlayerScript : MonoBehaviour
 
     }
 
+    public void ObjectJump(float setJumpPower) { rigidbody_.velocity = new Vector3(rigidbody_.velocity.x, setJumpPower, rigidbody_.velocity.z); }
     public void SetJumpPower(float jumpPower) { this.jumpPower = jumpPower; }
 }
