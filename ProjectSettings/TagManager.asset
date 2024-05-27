@@ -7,6 +7,8 @@ TagManager:
   - CollisionSphere
   - Hole
   - Clone
+  - Field
+  - HoleCollision1
   layers:
   - Default
   - TransparentFX

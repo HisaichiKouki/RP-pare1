@@ -9,6 +9,7 @@ public class PlayerScript : MonoBehaviour
 
     Rigidbody rigidbody_;
     public float speed;
+    public float jumpPower;
     [Header("ˆÚ“®•û–@")]
     [SerializeField] private bool moveType;
     [SerializeField,TextArea] string description2;
@@ -58,9 +59,12 @@ public class PlayerScript : MonoBehaviour
             Debug.Log("Shot");
             GameObject clon = Instantiate(cloneObj);
             clon.transform.position = shotPosition.transform.position;
-            clon.GetComponent<Rigidbody>().velocity = rigidbody_.velocity * shotSpeed;
+            Vector3 newVector = rigidbody_.velocity * shotSpeed;
+            newVector.y = -jumpPower;
+            clon.GetComponent<Rigidbody>().velocity = newVector;
             shotCount = kShotCoolTime;
             stopCount = kStopTime;
+            rigidbody_.velocity = new Vector3(0, jumpPower, 0);
         }
     }
 

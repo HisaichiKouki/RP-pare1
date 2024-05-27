@@ -57,7 +57,7 @@ public class ShotPointScript : MonoBehaviour
         {
             isTouch = false;
         }
-        Debug.Log("targetPos" + targetPos);
+       // Debug.Log("targetPos" + targetPos);
 
         newPos = transform.position;
         Vector3 newTargetPos = player.transform.position + targetPos;
@@ -65,7 +65,7 @@ public class ShotPointScript : MonoBehaviour
         newPos.z = (1.0f - easeT) * transform.position.z + (newTargetPos.z) * easeT;
         newPos.y = player.transform.position.y;
         transform.position = newPos;
-        Debug.Log("newPos" + newPos);
+        //Debug.Log("newPos" + newPos);
 
     }
 
