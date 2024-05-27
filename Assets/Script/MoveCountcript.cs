@@ -28,7 +28,7 @@ public class MoveCountcript : MonoBehaviour
             
             moveCount++;
             transform.position = targetObj.transform.position;
-            Debug.Log("MoveCount" + moveCount);
+            //Debug.Log("MoveCount" + moveCount);
         }
     }
   
