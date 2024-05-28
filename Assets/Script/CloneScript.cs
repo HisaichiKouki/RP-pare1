@@ -88,6 +88,10 @@ public class CloneScript : MonoBehaviour
         {
             isCollision = false;
         }
+        if(other.gameObject.tag == "Hole"&& other.gameObject.tag == "OutSideHole")
+        {
+            other.GetComponent<Hole2PlayerScript>().SetIsScored(false);
+        }
     }
 
     public void SetIsScored(bool isScored) { this.isScored = isScored; }
