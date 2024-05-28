@@ -16,7 +16,7 @@ public class EnemySpowner : MonoBehaviour
     {
         targetObj = GameObject.Find("Field");
         fieldScript = targetObj.GetComponent<FieldScript>();
-       
+
     }
 
     // Update is called once per frame
@@ -26,10 +26,14 @@ public class EnemySpowner : MonoBehaviour
         {
 
             Debug.Log("Touch");
-            for (int i = enemys.Count - 1; 0 < enemys.Count; i--)
+            for (int i = enemys.Count - 1; i >= 0; i--)
             {
-                Destroy(enemys[i].gameObject);
-                enemys.RemoveAt(i);
+                if (enemys[i].transform.GetChild(0).gameObject.activeSelf)
+                {
+                    Destroy(enemys[i].gameObject);
+                    enemys.RemoveAt(i);
+                }
+
             }
 
         }
