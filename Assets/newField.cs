@@ -21,7 +21,25 @@ public class FieldScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (isScored)
+        {
+            foreach (Transform child in transform)
+            {
+                if (child.GetComponent<HoleScript>().IsMaxScale())
+                {
+                    Debug.Log(child.tag);
+                    if (child.gameObject.tag == "Hole")
+                    {
+                        scoreCount++;
+                    }
+                    if (child.gameObject.tag == "OutSideHole")
+                    {
+                        scoreCount += 2;
+                    }
+                }
+            }
+            Debug.Log(scoreCount);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
