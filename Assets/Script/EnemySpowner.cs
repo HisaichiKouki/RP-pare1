@@ -9,13 +9,13 @@ public class EnemySpowner : MonoBehaviour
 
     List<GameObject> enemys = new List<GameObject>();
     GameObject targetObj;
-    private FieldScript fieldScript;
+    private newField fieldScript;
 
     // Start is called before the first frame update
     void Start()
     {
-        targetObj = GameObject.Find("Field");
-        fieldScript = targetObj.GetComponent<FieldScript>();
+        targetObj = GameObject.Find("Field3");
+        fieldScript = targetObj.GetComponent<newField>();
 
     }
 
@@ -25,7 +25,7 @@ public class EnemySpowner : MonoBehaviour
         if (fieldScript.IsScored())
         {
 
-            Debug.Log("Touch");
+            
             for (int i = enemys.Count - 1; i >= 0; i--)
             {
                 if (enemys[i].transform.GetChild(0).gameObject.activeSelf)
