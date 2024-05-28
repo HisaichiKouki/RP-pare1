@@ -12,6 +12,7 @@ public class CloneScript : MonoBehaviour
     GameObject targetObj;
     private FieldScript fieldScript;
     private bool isScored;
+    private bool isMaxScale;
     float holeSize;
     [SerializeField] bool isChange = true;
 
@@ -57,6 +58,7 @@ public class CloneScript : MonoBehaviour
                 if (transform.localScale.x > holeSize)
                 {
                     transform.localScale = new Vector3(holeSize, holeSize, holeSize);
+                    isMaxScale = true;
                 }
                 
                 if (isScored)
@@ -93,7 +95,7 @@ public class CloneScript : MonoBehaviour
         }
     }
 
-    public void SetIsScored(bool isScored) { 
-        this.isScored = isScored;
-    }
+    public void SetIsScored(bool isScored) { this.isScored = isScored; }
+
+    public bool IsMaxScale() { return isMaxScale; }
 }
