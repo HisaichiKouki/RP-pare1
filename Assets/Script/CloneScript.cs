@@ -9,7 +9,7 @@ public class CloneScript : MonoBehaviour
     private GameObject colSphere;
 
     GameObject targetObj;
-    private FieldScript fieldScript;
+    private newField fieldScript;
     private bool isScored;
     private bool isMaxScale;
     float holeSize;
@@ -20,9 +20,8 @@ public class CloneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetObj = GameObject.Find("Field");
-        fieldScript = targetObj.GetComponent<FieldScript>();
-       
+        targetObj = GameObject.Find("Field3");
+        fieldScript = targetObj.GetComponent<newField>();
     }
 
     // Update is called once per frame

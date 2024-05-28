@@ -6,7 +6,7 @@ public class HoleScript : MonoBehaviour
 {
     private bool isScored = false;
     private bool isMaxScale;
-    [SerializeField] float burstJumpPower;
+    private float burstJumpPower;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,14 @@ public class HoleScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
+        if (this.tag == "Hole")
+        {
+            gameObject.transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+        }
+        if (this.tag == "OutSideHole")
+        {
+            gameObject.transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+        }
     }
 
     //private void OnCollisionEnter(Collision collision)
@@ -48,6 +56,7 @@ public class HoleScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+            isScored = true;
         }
     }
 
@@ -57,6 +66,7 @@ public class HoleScript : MonoBehaviour
         {
             transform.parent.GetComponent<newField>().AddScoreCount(0);
             transform.parent.GetComponent<newField>().SetScoreZero();
+            isScored = false;
         }
     }
 

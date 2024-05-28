@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
+using UnityEditor.XR;
 using UnityEngine;
 
 public class newField : MonoBehaviour
 {
     private int scoreCount;
     private int score;
+    private bool isScored;
 
     // Start is called before the first frame update
     void Start()
@@ -71,4 +73,8 @@ public class newField : MonoBehaviour
     public void SetScoreZero() { scoreCount = 0; }
 
     public int GetScore() { return score; }
+
+    public bool IsScored() {  return isScored; }
+
+    public void SetIsScored(bool isScored) { this.isScored = isScored; }
 }
