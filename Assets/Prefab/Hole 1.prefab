@@ -448,6 +448,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Hole
       objectReference: {fileID: 0}
+    - target: {fileID: 8164078558771037576, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
+      propertyPath: m_TagString
+      value: Hole
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

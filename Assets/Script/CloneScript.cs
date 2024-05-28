@@ -47,17 +47,17 @@ public class CloneScript : MonoBehaviour
             if (transform.localScale.x< holeSize)
             {
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
-                Debug.Log("expansion ");
+                //Debug.Log("expansion ");
                 //colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
                 //Destroy(this.gameObject);
                 //
             }
             else
             {
+                isMaxScale = true;
                 if (transform.localScale.x > holeSize)
                 {
                     transform.localScale = new Vector3(holeSize, holeSize, holeSize);
-                    isMaxScale = true;
                 }
                 
                 if (isScored)
@@ -65,9 +65,6 @@ public class CloneScript : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
-
-           
-           
         }
     }
 

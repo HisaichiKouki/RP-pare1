@@ -41,7 +41,7 @@ public class MoveCountcript : MonoBehaviour
         {
             playerScript.AddSphere();
             moveCount = 0;
-            Debug.Log("残段数" + playerScript.GetnowSphere());
+           // Debug.Log("残段数" + playerScript.GetnowSphere());
         }
     }
 

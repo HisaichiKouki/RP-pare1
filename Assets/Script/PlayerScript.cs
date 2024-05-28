@@ -77,7 +77,7 @@ public class PlayerScript : MonoBehaviour
             rigidbody_.velocity = new Vector3(0, jumpPower, 0);
 
             nowSpherCount--;
-            Debug.Log("残段数" + nowSpherCount);
+           // Debug.Log("残段数" + nowSpherCount);
         }
     }
 
