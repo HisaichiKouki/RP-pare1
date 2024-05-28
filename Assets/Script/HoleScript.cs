@@ -8,10 +8,12 @@ public class HoleScript : MonoBehaviour
     private bool isMaxScale;
     private float burstJumpPower;
 
+    GameObject parent;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        parent= GameObject.Find("Field3");
     }
 
     // Update is called once per frame
@@ -23,11 +25,13 @@ public class HoleScript : MonoBehaviour
         //}
         if (this.tag == "Hole")
         {
-            transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            //transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            parent.GetComponent<newField>().SetIsScored(isScored);
         }
-        if (this.tag == "OutSideHole")
+        else if (this.tag == "OutSideHole")
         {
-            transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+           // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            parent.GetComponent<newField>().SetIsScored(isScored);
         }
     }
 
@@ -64,8 +68,10 @@ public class HoleScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            transform.parent.GetComponent<newField>().AddScoreCount(0);
-            transform.parent.GetComponent<newField>().SetScoreZero();
+            //transform.parent.GetComponent<newField>().AddScoreCount(0);
+            //transform.parent.GetComponent<newField>().SetScoreZero();
+            parent.GetComponent<newField>().AddScoreCount(0);
+            parent.GetComponent<newField>().SetScoreZero();
             isScored = false;
         }
     }
