@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 using TMPro;
-using UnityEditor.XR;
 using UnityEngine;
 
 public class FieldScoreScript : MonoBehaviour
@@ -22,6 +21,8 @@ public class FieldScoreScript : MonoBehaviour
         tortalScore = 0;
         scoreText.SetText("Score:" + tortalScore);
         gameManagerScript = FindAnyObjectByType<GameManagerScript>();
+        isScored = false;
+        calculation = false;
     }
 
     // Update is called once per frame
