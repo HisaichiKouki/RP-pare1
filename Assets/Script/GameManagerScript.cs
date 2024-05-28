@@ -47,4 +47,5 @@ public class GameManagerScript : MonoBehaviour
     }
 
     public void IsDamage() { gameTimer -= damegeCount; }
+    public bool IsFinish() { return isFinish; }
 }
