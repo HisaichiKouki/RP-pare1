@@ -72,7 +72,7 @@ public class FieldScript : MonoBehaviour
             {
                 for (int j = 0; j < kFieldCols; j++)
                 {
-                    if (field[j, i].GetComponent<CloneScript>().IsMaxScale())
+                    if (field[j, i].GetComponent<HoleScript>().IsMaxScale())
                     {
                         scoreCount++;
                     }
@@ -84,7 +84,7 @@ public class FieldScript : MonoBehaviour
             scoreCount = 0;
             for(int i=0;i< field.GetLength(1); i++)
             {
-                if (field[InIndexY, InIndexX].GetComponent<CloneScript>().IsMaxScale())
+                if (field[InIndexY, InIndexX].GetComponent<HoleScript>().IsMaxScale())
                 {
                     IndexCount++;
                     InIndexX++;
@@ -96,7 +96,7 @@ public class FieldScript : MonoBehaviour
             }
             for (int i = 0; i < field.GetLength(0); i++)
             {
-                if (field[InIndexY, InIndexX].GetComponent<CloneScript>().IsMaxScale())
+                if (field[InIndexY, InIndexX].GetComponent<HoleScript>().IsMaxScale())
                 {
                     IndexCount++;
                     InIndexY++;

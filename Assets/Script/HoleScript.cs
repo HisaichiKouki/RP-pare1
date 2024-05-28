@@ -6,6 +6,7 @@ public class HoleScript : MonoBehaviour
 {
     private bool isScored = false;
     private bool isCollision = false;
+    private bool isMaxScale;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +29,12 @@ public class HoleScript : MonoBehaviour
         {
             isCollision = true;
             collision.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+            isMaxScale = collision.gameObject.GetComponent<CloneScript>().IsMaxScale();
         }
     }
 
     public void SetIsScored(bool isScored) { this.isScored = isScored; }
     public bool IsScored() { return this.isScored; }
+
+    public bool IsMaxScale() {  return this.isMaxScale; }
 }
