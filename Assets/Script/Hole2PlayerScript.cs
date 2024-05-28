@@ -48,6 +48,11 @@ public class Hole2PlayerScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+            isScored = true;
+        }
 
         if (other.gameObject.tag == "Clone")
         {
@@ -58,11 +63,6 @@ public class Hole2PlayerScript : MonoBehaviour
         {
             if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
             if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
-        }
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
-            isScored = true;
         }
     }
 
