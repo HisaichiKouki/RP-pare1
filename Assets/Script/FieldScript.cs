@@ -17,6 +17,8 @@ public class FieldScript : MonoBehaviour
 
     public float burstJumpPower;
 
+    private int scoreCount;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -60,6 +62,49 @@ public class FieldScript : MonoBehaviour
                 //}
 
                 field[j, i].GetComponent<HoleScript>().SetIsScored(isScored);
+
+            }
+        }
+
+        if (isScored)
+        {
+            for (int i = 0; i < kFieldRows; i++)
+            {
+                for (int j = 0; j < kFieldCols; j++)
+                {
+                    if (field[j, i].GetComponent<CloneScript>().IsMaxScale())
+                    {
+                        scoreCount++;
+                    }
+                }
+            }
+            int InIndexX = 0;
+            int InIndexY = 0;
+            int IndexCount = 0;
+            scoreCount = 0;
+            for(int i=0;i< field.GetLength(1); i++)
+            {
+                if (field[InIndexY, InIndexX].GetComponent<CloneScript>().IsMaxScale())
+                {
+                    IndexCount++;
+                    InIndexX++;
+                    if(IndexCount== field.GetLength(0))
+                    {
+                        scoreCount++;
+                    }
+                }
+            }
+            for (int i = 0; i < field.GetLength(0); i++)
+            {
+                if (field[InIndexY, InIndexX].GetComponent<CloneScript>().IsMaxScale())
+                {
+                    IndexCount++;
+                    InIndexY++;
+                    if (IndexCount == field.GetLength(1))
+                    {
+                        scoreCount++;
+                    }
+                }
             }
         }
     }
@@ -73,7 +118,7 @@ public class FieldScript : MonoBehaviour
             //プレイヤーの子のコライダーから親のリジットボディを取得
             //Rigidbody newVelocity = other.transform.parent.GetComponent<Rigidbody>();
             // 親のリジットボディのvelocityの値を変えてる
-           // newVelocity.velocity = new Vector3(newVelocity.velocity.x, 20, newVelocity.velocity.z);
+            // newVelocity.velocity = new Vector3(newVelocity.velocity.x, 20, newVelocity.velocity.z);
         }
     }
 
@@ -85,5 +130,5 @@ public class FieldScript : MonoBehaviour
         }
     }
 
-    public bool IsScored (){ return isScored; }
+    public bool IsScored() { return isScored; }
 }
