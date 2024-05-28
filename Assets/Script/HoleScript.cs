@@ -13,7 +13,7 @@ public class HoleScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        parent= GameObject.Find("Field3");
+        parent = GameObject.Find("Field3");
         burstJumpPower = parent.GetComponent<newField>().burstJumpPower;
     }
 
@@ -31,7 +31,7 @@ public class HoleScript : MonoBehaviour
         }
         else if (this.tag == "OutSideHole")
         {
-           // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
             parent.GetComponent<newField>().SetIsScored(isScored);
         }
     }
@@ -83,8 +83,8 @@ public class HoleScript : MonoBehaviour
         {
             //transform.parent.GetComponent<newField>().AddScoreCount(0);
             //transform.parent.GetComponent<newField>().SetScoreZero();
-            parent.GetComponent<newField>().AddScoreCount(0);
-            parent.GetComponent<newField>().SetScoreZero();
+            //parent.GetComponent<newField>().AddScoreCount(0);
+            // parent.GetComponent<newField>().SetScoreZero();
             //isScored = false;
         }
     }

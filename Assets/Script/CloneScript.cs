@@ -41,6 +41,7 @@ public class CloneScript : MonoBehaviour
             //}
 
             isScored = fieldScript.IsScored();
+            Debug.Log("IsScored" + isScored);
             holeSize = colSphere.transform.localScale.x;
             holeSize -= 0.02f;//拡大サイズを少し小さくしてガクガクしないようにする
             if (transform.localScale.x< holeSize)
@@ -90,7 +91,7 @@ public class CloneScript : MonoBehaviour
         }
         if(other.gameObject.tag == "Hole"&& other.gameObject.tag == "OutSideHole")
         {
-            other.GetComponent<Hole2PlayerScript>().SetIsScored(false);
+           // other.GetComponent<Hole2PlayerScript>().SetIsScored(false);
         }
     }
 

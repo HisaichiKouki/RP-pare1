@@ -59,7 +59,7 @@ public class FieldScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            isScored = false;
+            //isScored = false;
         }
     }
 

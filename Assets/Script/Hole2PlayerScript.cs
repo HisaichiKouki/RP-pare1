@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class Hole2PlayerScript : MonoBehaviour
 {
-    private bool isScored = false;
+   // private bool isScored = false;
     private bool isMaxScale;
     private float burstJumpPower;
 
@@ -27,13 +28,14 @@ public class Hole2PlayerScript : MonoBehaviour
         if (this.tag == "Hole")
         {
             //transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
-            parent.GetComponent<newField>().SetIsScored(isScored);
+           // parent.GetComponent<newField>().SetIsScored(isScored);
         }
         else if (this.tag == "OutSideHole")
         {
             // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
-            parent.GetComponent<newField>().SetIsScored(isScored);
+           // parent.GetComponent<newField>().SetIsScored(isScored);
         }
+       // Debug.Log("IsScored" + isScored);
     }
 
     //private void OnCollisionEnter(Collision collision)
@@ -51,12 +53,13 @@ public class Hole2PlayerScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
-            isScored = true;
+            //isScored = true;
+            other.gameObject.GetComponent<CloneScript>().SetIsScored(true);
         }
 
         if (other.gameObject.tag == "Clone")
         {
-            other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+            //other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
             isMaxScale = other.gameObject.GetComponent<CloneScript>().IsMaxScale();
         }
         if (other.gameObject.tag == "Player" && isMaxScale)
@@ -71,12 +74,15 @@ public class Hole2PlayerScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             collision.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+            parent.gameObject.GetComponent<newField>().SetIsScored(true);
+            //isScored = true;
+            Debug.Log("hit");
         }
 
         if (collision.gameObject.tag == "Clone" && collision.gameObject.tag == "Player")
         {
-            isScored = true;
-            collision.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+           
+           // collision.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
             isMaxScale = collision.gameObject.GetComponent<CloneScript>().IsMaxScale();
         }
         if (collision.gameObject.tag == "Player" && isMaxScale)
@@ -84,8 +90,7 @@ public class Hole2PlayerScript : MonoBehaviour
             if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
             if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
         }
-        a++;
-        Debug.Log("hit");
+       
     }
 
     //private void OnCollisionExit(Collision collision)
@@ -108,8 +113,8 @@ public class Hole2PlayerScript : MonoBehaviour
         }
     }
 
-    public void SetIsScored(bool isScored) { this.isScored = isScored; }
-    public bool IsScored() { return this.isScored; }
+   // public void SetIsScored(bool isScored) { this.isScored = isScored; }
+    //public bool IsScored() { return this.isScored; }
 
     public bool IsMaxScale() { return this.isMaxScale; }
 }
