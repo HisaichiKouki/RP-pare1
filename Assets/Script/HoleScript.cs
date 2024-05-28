@@ -46,48 +46,109 @@ public class HoleScript : MonoBehaviour
     //    }
     //}
 
-    private void OnTriggerEnter(Collider other)
-    {
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+    //        isScored = true;
+    //    }
 
-        if (other.gameObject.tag == "Clone")
-        {
-            other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
-            isMaxScale = other.gameObject.GetComponent<CloneScript>().IsMaxScale();
-        }
-        if (other.gameObject.tag == "Player" && isMaxScale)
-        {
-            if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
-            if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
-        }
-        if (other.gameObject.tag == "Player")
-        {
-            other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
-            isScored = true;
-        }
-    }
+    //    if (other.gameObject.tag == "Clone")
+    //    {
+    //        other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+    //        isMaxScale = other.gameObject.GetComponent<CloneScript>().IsMaxScale();
+    //    }
+    //    if (other.gameObject.tag == "Player" && isMaxScale)
+    //    {
+    //        if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
+    //        if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
+    //    }
+    //}
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        a++;
-        Debug.Log("hit");
-        if (collision.gameObject.tag == "Player")
-        {
-            collision.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
-            isScored = true;
-        }
-    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        collision.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+    //    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //transform.parent.GetComponent<newField>().AddScoreCount(0);
-            //transform.parent.GetComponent<newField>().SetScoreZero();
-            //parent.GetComponent<newField>().AddScoreCount(0);
-            // parent.GetComponent<newField>().SetScoreZero();
-            //isScored = false;
-        }
-    }
+    //    if (collision.gameObject.tag == "Clone" && collision.gameObject.tag == "Player")
+    //    {
+    //        isScored = true;
+    //        collision.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+    //        isMaxScale = collision.gameObject.GetComponent<CloneScript>().IsMaxScale();
+    //    }
+    //    if (collision.gameObject.tag == "Player" && isMaxScale)
+    //    {
+    //        if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
+    //        if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
+    //    }
+    //    a++;
+    //    Debug.Log("hit");
+    //}
+
+    ////private void OnCollisionExit(Collision collision)
+    ////{
+    ////    if (collision.gameObject.tag == "Player")
+    ////    {
+    ////        isScored = false;
+    ////    }
+    ////}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        //transform.parent.GetComponent<newField>().AddScoreCount(0);
+    //        //transform.parent.GetComponent<newField>().SetScoreZero();
+    //        parent.GetComponent<newField>().AddScoreCount(0);
+    //        parent.GetComponent<newField>().SetScoreZero();
+    //        //isScored = false;
+    //    }
+    //}
+
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+    //        isScored = true;
+    //    }
+    //    if (other.gameObject.tag == "Clone"&&)
+    //    {
+    //        other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
+    //        isMaxScale = other.gameObject.GetComponent<CloneScript>().IsMaxScale();
+    //    }
+    //    if (other.gameObject.tag == "Player" && isMaxScale)
+    //    {
+    //        if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
+    //        if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
+    //    }
+    //}
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    a++;
+    //    Debug.Log("hit");
+    //    if (collision.gameObject.tag == "Player")
+    //    {
+    //        collision.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+    //        isScored = true;
+    //    }
+    //}
+
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.tag == "Player")
+    //    {
+    //        //transform.parent.GetComponent<newField>().AddScoreCount(0);
+    //        //transform.parent.GetComponent<newField>().SetScoreZero();
+    //        parent.GetComponent<newField>().AddScoreCount(0);
+    //        parent.GetComponent<newField>().SetScoreZero();
+    //        //isScored = false;
+    //    }
+    //}
 
     public void SetIsScored(bool isScored) { this.isScored = isScored; }
     public bool IsScored() { return this.isScored; }
