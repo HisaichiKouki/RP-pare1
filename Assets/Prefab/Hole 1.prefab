@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6580225198100080525}
   - component: {fileID: 1915221057305067330}
   - component: {fileID: 6141861856164559860}
+  - component: {fileID: 4431571378578556675}
   m_Layer: 0
   m_Name: Prim.00000000
   m_TagString: HoleCollision1
@@ -190,6 +191,18 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2432090755550338912, guid: b0c2c44bcbd6ab746ad227ec53ed538c, type: 3}
+--- !u!114 &4431571378578556675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2208276528685541332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bc35278064000b478501daa7808711f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4709333345712706625
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,12 @@ public class HoleScript : MonoBehaviour
     private float burstJumpPower;
 
     GameObject parent;
-
+    int a;
     // Start is called before the first frame update
     void Start()
     {
         parent= GameObject.Find("Field3");
+        burstJumpPower = parent.GetComponent<newField>().burstJumpPower;
     }
 
     // Update is called once per frame
@@ -47,6 +48,7 @@ public class HoleScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.tag == "Clone")
         {
             other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
@@ -60,6 +62,17 @@ public class HoleScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+            isScored = true;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        a++;
+        Debug.Log("hit");
+        if (collision.gameObject.tag == "Player")
+        {
+            collision.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
             isScored = true;
         }
     }

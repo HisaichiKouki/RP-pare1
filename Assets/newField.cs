@@ -9,6 +9,7 @@ public class newField : MonoBehaviour
     private int scoreCount;
     private int score;
     private bool isScored;
+    public float burstJumpPower;
 
     // Start is called before the first frame update
     void Start()
