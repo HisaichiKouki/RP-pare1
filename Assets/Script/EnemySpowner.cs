@@ -6,6 +6,8 @@ public class EnemySpowner : MonoBehaviour
 {
     [SerializeField]private GameObject spownObj;
     [SerializeField,Header("ゲームシーンのFieldをアタッチする")] public GameObject centerObj;
+
+    List<GameObject> enemys = new List<GameObject>();
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class EnemySpowner : MonoBehaviour
             //Debug.Log("newDire" + newDire);
             GameObject spown = Instantiate(spownObj);
             spown.GetComponent<OjamaScript>().InitPosDire(newPosition, newDire);
-
+            enemys.Add(spown);
             Destroy(collision.gameObject);
             return;
         }
