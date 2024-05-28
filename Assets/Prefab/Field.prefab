@@ -108,6 +108,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f071454237e3f2a45a1dd348514e9f10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kRespawnTIme: 2
+  Hole1: {fileID: 0}
+  Box: {fileID: 0}
+  burstJumpPower: 0
 --- !u!1001 &363518948013298618
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -119,6 +123,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -181,6 +189,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -254,7 +266,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2
+      value: -1.99
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -305,6 +317,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -368,6 +384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -429,6 +449,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -678,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -864,6 +892,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2
@@ -988,6 +1020,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (21)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1049,6 +1085,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1112,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2
@@ -1173,6 +1217,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1236,6 +1284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -1297,6 +1349,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1422,6 +1478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hole 1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
+      objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4
@@ -1483,6 +1543,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1607,6 +1671,10 @@ PrefabInstance:
     - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_Name
       value: Hole 1 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6129767109615414594, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
+      propertyPath: m_TagString
+      value: OutSideHole
       objectReference: {fileID: 0}
     - target: {fileID: 6798920417929050104, guid: 354ddcf021144a945974d8ffe7e48b4c, type: 3}
       propertyPath: m_LocalPosition.x
