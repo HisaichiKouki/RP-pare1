@@ -11,6 +11,7 @@ TagManager:
   - HoleCollision1
   - tastField
   - OutSideHole
+  - HoleCollision_OutSide
   layers:
   - Default
   - TransparentFX

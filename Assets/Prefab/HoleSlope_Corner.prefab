@@ -155,7 +155,7 @@ GameObject:
   - component: {fileID: 611068962598587540}
   m_Layer: 0
   m_Name: Prim.00000000
-  m_TagString: Untagged
+  m_TagString: HoleCollision_OutSide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
