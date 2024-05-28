@@ -30,7 +30,7 @@ public class RayCastScript : MonoBehaviour
         reticleObj.SetActive(false);
         for (int i = 0; i < hit.Length; i++)
         {
-            if (hit[i].collider.CompareTag("HoleCollision1"))
+            if (hit[i].collider.CompareTag("HoleCollision1")|| hit[i].collider.CompareTag("HoleCollision_OutSide"))
             {
 
                 //print("Found an object - distance: " + hit[i].distance);

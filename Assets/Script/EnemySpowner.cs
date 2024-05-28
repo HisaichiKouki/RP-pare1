@@ -10,10 +10,12 @@ public class EnemySpowner : MonoBehaviour
     List<GameObject> enemys = new List<GameObject>();
     GameObject targetObj;
     private newField fieldScript;
+    GameObject timerObj;
 
     // Start is called before the first frame update
     void Start()
     {
+        timerObj= GameObject.Find("GameManager");
         targetObj = GameObject.Find("Field3");
         fieldScript = targetObj.GetComponent<newField>();
 
@@ -56,6 +58,11 @@ public class EnemySpowner : MonoBehaviour
             enemys.Add(spown);
             Destroy(collision.gameObject);
             return;
+        }else if (collision.gameObject.tag == "Player")
+        {
+            collision.transform.position = new Vector3(0, 10, 0);
+            collision.gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            timerObj.GetComponent<GameManagerScript>().IsDamage();
         }
     }
 }
