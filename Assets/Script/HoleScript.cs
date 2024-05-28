@@ -85,7 +85,7 @@ public class HoleScript : MonoBehaviour
             //transform.parent.GetComponent<newField>().SetScoreZero();
             parent.GetComponent<newField>().AddScoreCount(0);
             parent.GetComponent<newField>().SetScoreZero();
-            isScored = false;
+            //isScored = false;
         }
     }
 
