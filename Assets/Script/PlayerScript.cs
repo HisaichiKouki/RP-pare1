@@ -15,7 +15,8 @@ public class PlayerScript : MonoBehaviour
     [SerializeField,TextArea] string description2;
 
     [SerializeField, Header("何カウント移動したら玉を補充するか")] private int addCount;
-    private int nowSpherCount;//残弾数
+    [SerializeField,Header("残弾数")] private int nowSpherCount;
+
 
 
 
@@ -37,7 +38,7 @@ public class PlayerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nowSpherCount = 0;
+       
         scale = transform.localScale.x;
 
         rigidbody_ = GetComponent<Rigidbody>();

@@ -10,7 +10,7 @@ public class RayCastScript : MonoBehaviour
     public float rayDistance;//目標地点から手前に設置して埋まらないように
     public GameObject reticleObj;
 
-    float a;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +23,7 @@ public class RayCastScript : MonoBehaviour
         //RaycastHit[] hit=new RaycastHit[10];
         RaycastHit[] hit = Physics.RaycastAll(transform.position, Vector3.down, 100f);
 
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            a++;
-        }
+       
         reticleObj.SetActive(false);
         for (int i = 0; i < hit.Length; i++)
         {

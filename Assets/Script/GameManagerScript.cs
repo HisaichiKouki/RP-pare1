@@ -12,6 +12,8 @@ public class GameManagerScript : MonoBehaviour
     [SerializeField, Header("ƒvƒŒƒCƒ„[—‰º‚ÉŒ¸‚ç‚·•b”")] private float damegeCount;
     public TextMeshProUGUI text;
 
+    public GameObject finishText;
+
     bool isFinish;
     void Start()
     {
@@ -23,16 +25,25 @@ public class GameManagerScript : MonoBehaviour
     void Update()
     {
 
-        if (!isFinish)
+        CountDown();
+
+    }
+    void CountDown()
+    {
+        if (isFinish)
+        {
+            return;
+        }
+        else
         {
             gameTimer -= Time.deltaTime;
-            if (gameTimer <=0)
+            if (gameTimer <= 0)
             {
                 isFinish = true;
+                finishText.SetActive(true);
             }
         }
-        text.SetText("Time" +gameTimer.ToString("f1"));
-
+        text.SetText("Time" + gameTimer.ToString("f1"));
     }
 
     public void IsDamage() { gameTimer -= damegeCount; }

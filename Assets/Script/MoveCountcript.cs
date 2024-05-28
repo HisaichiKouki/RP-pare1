@@ -7,12 +7,14 @@ public class MoveCountcript : MonoBehaviour
     public GameObject targetObj;
     PlayerScript playerScript;
     int moveCount;
+    int addCount;
     Vector3 newPos;
     // Start is called before the first frame update
     void Start()
     {
         moveCount = 0;
         playerScript= targetObj.GetComponent<PlayerScript>();
+        addCount = playerScript.GetAddCount();
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class MoveCountcript : MonoBehaviour
   
     void AddSphere()
     {
-        if (moveCount >= playerScript.GetAddCount())
+        if (moveCount >= addCount)
         {
             playerScript.AddSphere();
             moveCount = 0;
