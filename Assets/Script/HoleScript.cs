@@ -5,8 +5,8 @@ using UnityEngine;
 public class HoleScript : MonoBehaviour
 {
     private bool isScored = false;
-    private bool isCollision = false;
     private bool isMaxScale;
+    [SerializeField] float burstJumpPower;
 
     // Start is called before the first frame update
     void Start()
@@ -37,9 +37,26 @@ public class HoleScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Clone")
         {
-            isCollision = true;
             other.gameObject.GetComponent<CloneScript>().SetIsScored(isScored);
             isMaxScale = other.gameObject.GetComponent<CloneScript>().IsMaxScale();
+        }
+        if (other.gameObject.tag == "Player" && isMaxScale)
+        {
+            if (this.tag == "Hole") { transform.parent.GetComponent<newField>().AddScoreCount(1); }
+            if (this.tag == "OutSideHole") { transform.parent.GetComponent<newField>().AddScoreCount(2); }
+        }
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            transform.parent.GetComponent<newField>().AddScoreCount(0);
+            transform.parent.GetComponent<newField>().SetScoreZero();
         }
     }
 
