@@ -16,6 +16,7 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField, Header("何カウント移動したら玉を補充するか")] private int addCount;
     [SerializeField,Header("残弾数")] private int nowSpherCount;
+    [SerializeField,Header("玉上限")] private int sphereLimit;
 
 
 
@@ -33,7 +34,7 @@ public class PlayerScript : MonoBehaviour
 
     public float GetScale() { return scale; }
     public int GetAddCount() { return addCount; }
-    public void AddSphere() { nowSpherCount++; }
+    public void AddSphere() { if (nowSpherCount < sphereLimit) { nowSpherCount++; } }
     public int GetnowSphere() { return nowSpherCount; }
     // Start is called before the first frame update
     void Start()
