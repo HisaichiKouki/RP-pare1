@@ -15,6 +15,8 @@ public class FieldScript : MonoBehaviour
     [SerializeField] GameObject Box;
     private bool isScored;
 
+    public float burstJumpPower;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -67,7 +69,7 @@ public class FieldScript : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             isScored = true;
-            other.gameObject.GetComponent<PlayerScript>().ObjectJump(20);
+            other.gameObject.GetComponent<PlayerScript>().ObjectJump(burstJumpPower);
             //プレイヤーの子のコライダーから親のリジットボディを取得
             //Rigidbody newVelocity = other.transform.parent.GetComponent<Rigidbody>();
             // 親のリジットボディのvelocityの値を変えてる

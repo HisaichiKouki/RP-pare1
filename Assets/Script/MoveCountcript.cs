@@ -5,12 +5,14 @@ using UnityEngine;
 public class MoveCountcript : MonoBehaviour
 {
     public GameObject targetObj;
+    PlayerScript playerScript;
     int moveCount;
     Vector3 newPos;
     // Start is called before the first frame update
     void Start()
     {
         moveCount = 0;
+        playerScript= targetObj.GetComponent<PlayerScript>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,7 @@ public class MoveCountcript : MonoBehaviour
         newPos = transform.position;
         newPos.y = targetObj.transform.position.y;
         transform.position = newPos;
+        AddSphere();
     }
 
     private void OnTriggerExit(Collider other)
@@ -32,6 +35,15 @@ public class MoveCountcript : MonoBehaviour
         }
     }
   
+    void AddSphere()
+    {
+        if (moveCount >= playerScript.GetAddCount())
+        {
+            playerScript.AddSphere();
+            moveCount = 0;
+            Debug.Log("écíiêî" + playerScript.GetnowSphere());
+        }
+    }
 
 
 }

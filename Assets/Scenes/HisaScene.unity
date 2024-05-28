@@ -457,11 +457,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3280386184418937601, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
       propertyPath: m_Name
-      value: Stage
+      value: Field
       objectReference: {fileID: 0}
     - target: {fileID: 3280386184418937601, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5141818643177032992, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
+      propertyPath: burstJumpPower
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6178142370358409639, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -665,6 +669,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1229835997567357465, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229835997567357465, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229835997567357465, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1229835997567357465, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -711,6 +727,14 @@ PrefabInstance:
     - target: {fileID: 3754938616660780122, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306493551854038846, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
+      propertyPath: addCount
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7306493551854038846, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
+      propertyPath: jumpPower
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7742018054061191621, guid: 95389de9e420c254fb0722e48ddda5b1, type: 3}
       propertyPath: m_LocalPosition.x

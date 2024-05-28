@@ -13,6 +13,8 @@ public class OjamaScript : MonoBehaviour
     public Vector2 burstPower;
     Rigidbody rb;
 
+
+
     /// <summary>
     /// オジャマの場所と移動方向を設定する。方向は-1で左,1で右
     /// </summary>

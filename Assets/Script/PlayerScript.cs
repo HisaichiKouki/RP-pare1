@@ -14,6 +14,11 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private bool moveType;
     [SerializeField,TextArea] string description2;
 
+    [SerializeField, Header("何カウント移動したら玉を補充するか")] private int addCount;
+    private int nowSpherCount;//残弾数
+
+
+
     [Header("発射するクローン関連")]
     public GameObject cloneObj;
     public float shotSpeed;
@@ -26,9 +31,13 @@ public class PlayerScript : MonoBehaviour
     float scale;//speedやdistanceをスケールに合わせて調整する
 
     public float GetScale() { return scale; }
+    public int GetAddCount() { return addCount; }
+    public void AddSphere() { nowSpherCount++; }
+    public int GetnowSphere() { return nowSpherCount; }
     // Start is called before the first frame update
     void Start()
     {
+        nowSpherCount = 0;
         scale = transform.localScale.x;
 
         rigidbody_ = GetComponent<Rigidbody>();
@@ -66,6 +75,9 @@ public class PlayerScript : MonoBehaviour
             shotCount = kShotCoolTime;
             stopCount = kStopTime;
             rigidbody_.velocity = new Vector3(0, jumpPower, 0);
+
+            nowSpherCount--;
+            Debug.Log("残段数" + nowSpherCount);
         }
     }
 
