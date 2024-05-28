@@ -18,7 +18,7 @@ public class ResultManagerScript : MonoBehaviour
     public GameObject scoreObj;
     TextMeshProUGUI scoreText;
 
-    float finalScore=100;
+    float finalScore;
     int nowScore;
     float easeT;
     public float MaxEaseTime;
@@ -34,6 +34,7 @@ public class ResultManagerScript : MonoBehaviour
         nowScore = 0;
         easeT = 0;
         isRetrySelect = true;
+        finalScore = FieldScoreScript.tortalScore;
     }
 
     // Update is called once per frame

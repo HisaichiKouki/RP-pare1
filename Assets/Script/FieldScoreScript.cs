@@ -12,15 +12,16 @@ public class FieldScoreScript : MonoBehaviour
     private bool isScored;
     public float burstJumpPower;
     bool calculation;
-    static public int tortalScore;
+    public static int tortalScore;
     GameManagerScript gameManagerScript;
 
-    public TextMeshProUGUI scoreText;  
+    public TextMeshProUGUI scoreText;
     // Start is called before the first frame update
     void Start()
     {
+        tortalScore = 0;
         scoreText.SetText("Score:" + tortalScore);
-        gameManagerScript=FindAnyObjectByType<GameManagerScript>();
+        gameManagerScript = FindAnyObjectByType<GameManagerScript>();
     }
 
     // Update is called once per frame
@@ -49,15 +50,15 @@ public class FieldScoreScript : MonoBehaviour
                 scoreText.SetText("Score:" + tortalScore);
             }
         }
-       
-       
-       
-       
 
-       
+
+
+
+
+
     }
 
-    
+
 
     public void AddScoreCount(int value) { scoreCount += value; }
 
