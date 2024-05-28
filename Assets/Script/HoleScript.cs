@@ -23,11 +23,11 @@ public class HoleScript : MonoBehaviour
         //}
         if (this.tag == "Hole")
         {
-            gameObject.transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
         }
         if (this.tag == "OutSideHole")
         {
-            gameObject.transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+            transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
         }
     }
 
