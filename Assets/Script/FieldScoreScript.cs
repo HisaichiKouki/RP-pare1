@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using UnityEditor.XR;
 using UnityEngine;
 
-public class newField : MonoBehaviour
+public class FieldScoreScript : MonoBehaviour
 {
     private int scoreCount;
     private int score;
@@ -20,7 +20,12 @@ public class newField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        {if (scoreCount != 0)
+        if (isScored)
+        {
+
+        }
+        if (scoreCount != 0)
+        {
             {
                 score = scoreCount * 10;
                 scoreCount = 0;

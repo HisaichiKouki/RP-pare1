@@ -9,8 +9,7 @@ public class CloneScript : MonoBehaviour
     private GameObject colSphere;
 
     GameObject targetObj;
-    private newField fieldScript;
-    private bool isScored;
+    private FieldScoreScript fieldScript;
     private bool isMaxScale;
     float holeSize;
     [SerializeField] bool isChange = true;
@@ -21,7 +20,7 @@ public class CloneScript : MonoBehaviour
     void Start()
     {
         targetObj = GameObject.Find("Field3");
-        fieldScript = targetObj.GetComponent<newField>();
+        fieldScript = targetObj.GetComponent<FieldScoreScript>();
     }
 
     // Update is called once per frame
@@ -29,28 +28,16 @@ public class CloneScript : MonoBehaviour
     {
         if (isCollision)
         {
-            //if (isChange == false)
-            //{
-            //    transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+          
 
-            //    if ((colSphere.transform.localScale.x * colSphere.transform.parent.localScale.x) <= transform.localScale.x)
-            //    {
-            //        colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
-            //        Destroy(this.gameObject);
-            //    }
-            //}
-
-            //isScored = fieldScript.IsScored();
-            Debug.Log("IsScored" + isScored);
+           
+           // Debug.Log("IsScored" + fieldScript.IsScored());
             holeSize = colSphere.transform.localScale.x;
             holeSize -= 0.02f;//ägëÂÉTÉCÉYÇè≠Çµè¨Ç≥Ç≠ÇµÇƒÉKÉNÉKÉNÇµÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈ
             if (transform.localScale.x < holeSize)
             {
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
-                //Debug.Log("expansion ");
-                //colSphere.transform.parent.GetComponent<HoleScript>().SetIsScored(true);
-                //Destroy(this.gameObject);
-                //
+                
             }
             else
             {
@@ -60,13 +47,13 @@ public class CloneScript : MonoBehaviour
                     transform.localScale = new Vector3(holeSize, holeSize, holeSize);
                 }
 
-                if (isScored)
-                {
-                    if (this.gameObject != null)
-                    {
-                        Destroy(this.gameObject);
-                    }
-                }
+                //if (fieldScript.IsScored())
+                //{
+                //    if (this.gameObject != null)
+                //    {
+                //        Destroy(this.gameObject);
+                //    }
+                //}
             }
         }
     }
@@ -74,7 +61,7 @@ public class CloneScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "CollisionSphere")
+        if (other.gameObject.tag == "CollisionSphere"|| other.gameObject.tag == "CollisionSphere_OutSide" )
         {
             isCollision = true;
             colSphere = other.gameObject;
@@ -88,7 +75,7 @@ public class CloneScript : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         // Debug.Log(other.gameObject.tag);
-        if (other.gameObject.tag == "CollisionSphere")
+        if (other.gameObject.tag == "CollisionSphere" || other.gameObject.tag == "CollisionSphere_OutSide")
         {
             isCollision = false;
         }
@@ -98,7 +85,7 @@ public class CloneScript : MonoBehaviour
         //}
     }
 
-    public void SetIsScored(bool isScored) { this.isScored = isScored; }
+    //public void SetIsScored(bool isScored) { this.isScored = isScored; }
 
     public bool IsMaxScale() { return isMaxScale; }
 }

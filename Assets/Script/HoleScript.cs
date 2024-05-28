@@ -9,12 +9,15 @@ public class HoleScript : MonoBehaviour
     private float burstJumpPower;
 
     GameObject parent;
+    FieldScoreScript parentScript;
+    GameObject hitObj;
     int a;
     // Start is called before the first frame update
     void Start()
     {
         parent = GameObject.Find("Field3");
-        burstJumpPower = parent.GetComponent<newField>().burstJumpPower;
+        parentScript=parent.GetComponent<FieldScoreScript>();
+        burstJumpPower = parentScript.burstJumpPower;
     }
 
     // Update is called once per frame
@@ -24,18 +27,47 @@ public class HoleScript : MonoBehaviour
         //{
         //    Destroy(gameObject);
         //}
-        if (this.tag == "Hole")
+        if (parentScript.IsScored())
         {
-            //transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
-            parent.GetComponent<newField>().SetIsScored(isScored);
+            if (hitObj != null)
+            {
+                if (this.tag == "Hole")
+                {
+                    Debug.Log("addScore 1");
+                    Destroy(hitObj);
+                }
+                else if (this.tag == "OutSideHole")
+                {
+                    Debug.Log("addScore 2");
+                }
+            }
         }
-        else if (this.tag == "OutSideHole")
-        {
-            // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
-            parent.GetComponent<newField>().SetIsScored(isScored);
-        }
+        //if (this.tag == "Hole")
+        //{
+        //    //transform.parent.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+        //    parent.GetComponent<newField>().SetIsScored(isScored);
+        //}
+        //else if (this.tag == "OutSideHole")
+        //{
+        //    // transform.parent.gameObject.GetComponent<newField>().SetIsScored(isScored);
+        //    parent.GetComponent<newField>().SetIsScored(isScored);
+        //}
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Clone")
+        {
+            hitObj = other.gameObject;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == hitObj)
+        {
+            hitObj = null;
+        }
+    }
     //private void OnCollisionEnter(Collision collision)
     //{
     //    if (collision.gameObject.tag == "Clone")

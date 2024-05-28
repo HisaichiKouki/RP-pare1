@@ -9,7 +9,7 @@ public class EnemySpowner : MonoBehaviour
 
     List<GameObject> enemys = new List<GameObject>();
     GameObject targetObj;
-    private newField fieldScript;
+    private FieldScoreScript fieldScript;
     GameObject timerObj;
 
     // Start is called before the first frame update
@@ -17,7 +17,7 @@ public class EnemySpowner : MonoBehaviour
     {
         timerObj= GameObject.Find("GameManager");
         targetObj = GameObject.Find("Field3");
-        fieldScript = targetObj.GetComponent<newField>();
+        fieldScript = targetObj.GetComponent<FieldScoreScript>();
 
     }
 
