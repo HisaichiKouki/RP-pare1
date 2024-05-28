@@ -46,6 +46,7 @@ public class newField : MonoBehaviour
             scoreCount = 0;
         }
         Debug.Log(score);
+        Debug.Log("FieldIsScored" + isScored);
     }
 
     //private void OnTriggerEnter(Collider other)
