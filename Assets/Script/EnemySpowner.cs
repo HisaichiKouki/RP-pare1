@@ -1,23 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemySpowner : MonoBehaviour
 {
-    [SerializeField]private GameObject spownObj;
-    [SerializeField,Header("ゲームシーンのFieldをアタッチする")] public GameObject centerObj;
+    [SerializeField] private GameObject spownObj;
 
     List<GameObject> enemys = new List<GameObject>();
+    GameObject targetObj;
+    private FieldScript fieldScript;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        targetObj = GameObject.Find("Field");
+        fieldScript = targetObj.GetComponent<FieldScript>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (fieldScript.IsScored())
+        {
+
+            Debug.Log("Touch");
+            for (int i = enemys.Count - 1; 0 < enemys.Count; i--)
+            {
+                Destroy(enemys[i].gameObject);
+                enemys.RemoveAt(i);
+            }
+
+        }
     }
 
 
@@ -26,11 +41,11 @@ public class EnemySpowner : MonoBehaviour
     {
         if (collision.gameObject.tag == "Clone")
         {
-            
+
             Vector3 newPosition = collision.transform.position;
             newPosition.y = 10;
-            Vector2 newDire = new Vector2(centerObj.transform.position.x- collision.transform.position.x,
-                centerObj.transform.position.y - collision.transform.position.z);
+            Vector2 newDire = new Vector2(targetObj.transform.position.x - collision.transform.position.x,
+                targetObj.transform.position.y - collision.transform.position.z);
             //Debug.Log("newDire" + newDire);
             GameObject spown = Instantiate(spownObj);
             spown.GetComponent<OjamaScript>().InitPosDire(newPosition, newDire);

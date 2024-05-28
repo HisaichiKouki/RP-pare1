@@ -146,3 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8031b5f14f58b4d80607197628cd0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  centerObj: {fileID: 3280386184418937601, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
+  isChange: 1

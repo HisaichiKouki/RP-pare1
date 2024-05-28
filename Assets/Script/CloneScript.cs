@@ -8,8 +8,9 @@ public class CloneScript : MonoBehaviour
 {
     private bool isCollision;
     private GameObject colSphere;
-    private FieldScript field;
 
+    GameObject targetObj;
+    private FieldScript fieldScript;
     private bool isScored;
     float holeSize;
     [SerializeField] bool isChange = true;
@@ -19,7 +20,8 @@ public class CloneScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        field = FindAnyObjectByType<FieldScript>();
+        targetObj = GameObject.Find("Field");
+        fieldScript = targetObj.GetComponent<FieldScript>();
        
     }
 
@@ -39,7 +41,7 @@ public class CloneScript : MonoBehaviour
             //    }
             //}
 
-            isScored = field.IsScored();
+            isScored = fieldScript.IsScored();
             holeSize = colSphere.transform.localScale.x;
             holeSize -= 0.02f;//ägëÂÉTÉCÉYÇè≠Çµè¨Ç≥Ç≠ÇµÇƒÉKÉNÉKÉNÇµÇ»Ç¢ÇÊÇ§Ç…Ç∑ÇÈ
             if (transform.localScale.x< holeSize)

@@ -457,7 +457,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3280386184418937601, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
       propertyPath: m_Name
-      value: Field
+      value: Stage
       objectReference: {fileID: 0}
     - target: {fileID: 3280386184418937601, guid: a60a4e2bf6870954db4500e34576f12e, type: 3}
       propertyPath: m_IsActive
