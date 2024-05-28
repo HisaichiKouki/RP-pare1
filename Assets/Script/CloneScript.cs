@@ -62,6 +62,8 @@ public class CloneScript : MonoBehaviour
         if (other.gameObject.tag == "CollisionSphere" || other.gameObject.tag == "CollisionSphere_OutSide")
         {
             isCollision = false;
+            SetMatColor(transform.GetComponent<MeshRenderer>(), Color.white);
+            transform.localScale = new Vector3(holeSize - 0.5f, holeSize - 0.5f, holeSize - 0.5f);
         }
     }
 
