@@ -87,5 +87,6 @@ public class CloneScript : MonoBehaviour
 
     //public void SetIsScored(bool isScored) { this.isScored = isScored; }
 
-    public bool IsMaxScale() { return isMaxScale; }
+    public bool GetIsMaxScale() { return isMaxScale; }
+
 }

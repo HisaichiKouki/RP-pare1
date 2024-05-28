@@ -21,18 +21,24 @@ public class SpherCollider2Clone : MonoBehaviour
     {
         if (parentScript.IsScored())
         {
-            if (hitObj != null)
+            if (hitObj!=null)
             {
-                if (this.tag == "CollisionSphere")
+                if (hitObj.GetComponent<CloneScript>().GetIsMaxScale())
                 {
-                    Debug.Log("addScore 1");
-                    Destroy(hitObj);
+                    if (this.tag == "CollisionSphere")
+                    {
+                        parentScript.AddScoreCount(1);
+                        Debug.Log("addScore 1");
+                        Destroy(hitObj);
+                    }
+                    else if (this.tag == "CollisionSphere_OutSide")
+                    {
+                        parentScript.AddScoreCount(10);
+                        Debug.Log("addScore 2");
+                        Destroy(hitObj);
+                    }
                 }
-                else if (this.tag == "CollisionSphere_OutSide")
-                {
-                    Debug.Log("addScore 2");
-                    Destroy(hitObj);
-                }
+                
             }
         }
     }

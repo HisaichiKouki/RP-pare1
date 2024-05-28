@@ -10,7 +10,8 @@ public class FieldScoreScript : MonoBehaviour
     private int score;
     private bool isScored;
     public float burstJumpPower;
-
+    bool calculation;
+    int tortalScore;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,19 +21,28 @@ public class FieldScoreScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //先に計算をしたかのフラグを立てて、計算をしてたらisScoredをfalseにする
+        if (calculation)
+        {
+            isScored = false;
+            calculation = false;
+        }
         if (isScored)
         {
-
-        }
-        if (scoreCount != 0)
-        {
+            calculation = true;
+            if (scoreCount != 0)
             {
-                score = scoreCount * 10;
-                scoreCount = 0;
+                {
+                    score = scoreCount * 10;
+                    scoreCount = 0;
+                    tortalScore += score;
+                }
             }
+            Debug.Log("nowScore=" + tortalScore);
         }
-        Debug.Log(score);
-        Debug.Log("FieldIsScored" + isScored);
+       
+       
+       
 
         //GameObject[] clones = GameObject.FindGameObjectsWithTag("Clone");
 
@@ -63,7 +73,7 @@ public class FieldScoreScript : MonoBehaviour
     //    }
     //}
 
-    public void AddScoreCount(int score) { scoreCount += score; }
+    public void AddScoreCount(int value) { scoreCount += value; }
 
     public void SetScoreZero() { scoreCount = 0; }
 
