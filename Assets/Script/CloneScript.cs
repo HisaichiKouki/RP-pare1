@@ -40,11 +40,11 @@ public class CloneScript : MonoBehaviour
             //    }
             //}
 
-            isScored = fieldScript.IsScored();
+            //isScored = fieldScript.IsScored();
             Debug.Log("IsScored" + isScored);
             holeSize = colSphere.transform.localScale.x;
             holeSize -= 0.02f;//拡大サイズを少し小さくしてガクガクしないようにする
-            if (transform.localScale.x< holeSize)
+            if (transform.localScale.x < holeSize)
             {
                 transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
                 //Debug.Log("expansion ");
@@ -59,10 +59,13 @@ public class CloneScript : MonoBehaviour
                 {
                     transform.localScale = new Vector3(holeSize, holeSize, holeSize);
                 }
-                
+
                 if (isScored)
                 {
-                    Destroy(this.gameObject);
+                    if (this.gameObject != null)
+                    {
+                        Destroy(this.gameObject);
+                    }
                 }
             }
         }

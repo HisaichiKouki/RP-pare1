@@ -20,33 +20,21 @@ public class newField : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if (isScored)
-        //{
-        //    foreach (Transform child in transform)
-        //    {
-        //        if (child.GetComponent<HoleScript>().IsMaxScale())
-        //        {
-        //            Debug.Log(child.tag);
-        //            if (child.gameObject.tag == "Hole")
-        //            {
-        //                scoreCount++;
-        //            }
-        //            if (child.gameObject.tag == "OutSideHole")
-        //            {
-        //                scoreCount += 2;
-        //            }
-        //        }
-        //    }
-        //    Debug.Log(scoreCount);
-        //}
-
-        if (scoreCount != 0)
-        {
-            score = scoreCount * 10;
-            scoreCount = 0;
+        {if (scoreCount != 0)
+            {
+                score = scoreCount * 10;
+                scoreCount = 0;
+            }
         }
         Debug.Log(score);
         Debug.Log("FieldIsScored" + isScored);
+
+        //GameObject[] clones = GameObject.FindGameObjectsWithTag("Clone");
+
+        //foreach (GameObject clone in clones)
+        //{
+        //    clone.GetComponent<CloneScript>().SetIsScored(false);
+        //}
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -76,7 +64,7 @@ public class newField : MonoBehaviour
 
     public int GetScore() { return score; }
 
-    public bool IsScored() {  return isScored; }
+    public bool IsScored() { return isScored; }
 
     public void SetIsScored(bool isScored) { this.isScored = isScored; }
 }
