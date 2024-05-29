@@ -112,6 +112,7 @@ public class PlayerScript : MonoBehaviour
 
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
         Vector3 velocity = movement * speed * Time.deltaTime;
+        Debug.Log("PlayerVel=" + velocity);
         if (moveType)
         {
             rigidbody_.AddForce(velocity);
@@ -119,7 +120,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            rigidbody_.velocity = new Vector3(velocity.x, rigidbody_.velocity.y, velocity.z);
+            rigidbody_.velocity = new Vector3(velocity.x*2, rigidbody_.velocity.y, velocity.z*2);
         }
 
     }

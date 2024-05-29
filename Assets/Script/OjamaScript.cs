@@ -28,7 +28,7 @@ public class OjamaScript : MonoBehaviour
         deadTimer = 0;
         isDead = false;
         rb = GetComponent<Rigidbody>();
-        moveDirection.x = 1;//テスト用。実際にはInitで場所と移動方向を決める。
+        //moveDirection.x = 1;//テスト用。実際にはInitで場所と移動方向を決める。
        
     }
 
