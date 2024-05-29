@@ -18,6 +18,6 @@ public class SphereCountTextScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.SetText(""+playerScript.GetnowSphere());
+        text.SetText("BULLET\n"+playerScript.GetnowSphere());
     }
 }

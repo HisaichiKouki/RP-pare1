@@ -7,12 +7,14 @@ public class EnemySpowner : MonoBehaviour
 {
     [SerializeField] private GameObject spownObj;
 
-    List<GameObject> enemys = new List<GameObject>();
+    //List<GameObject> enemys = new List<GameObject>();
     GameObject targetObj;
     private FieldScoreScript fieldScript;
     GameObject timerObj;
 
-    public GameObject particleObject;
+    //public GameObject particleObject;
+    
+   
 
     // Start is called before the first frame update
     void Start()
@@ -26,22 +28,22 @@ public class EnemySpowner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fieldScript.IsScored())
-        {
+        //if (fieldScript.IsScored())
+        //{
 
             
-            for (int i = enemys.Count - 1; i >= 0; i--)
-            {
-                if (enemys[i].transform.GetChild(0).gameObject.activeSelf)
-                {
-                    Instantiate(particleObject, enemys[i].transform.position, Quaternion.Euler(-90f, 0f, 0f));
-                    Destroy(enemys[i].gameObject);
-                    enemys.RemoveAt(i);
-                }
+        //    for (int i = enemys.Count - 1; i >= 0; i--)
+        //    {
+        //        if (enemys[i].transform.GetChild(0).gameObject.activeSelf)
+        //        {
+                   
+        //            enemys[i].GetComponent<OjamaScript>().IsDeadtrue();
+        //            enemys.RemoveAt(i);
+        //        }
 
-            }
+        //    }
 
-        }
+        //}
     }
 
 
@@ -58,7 +60,7 @@ public class EnemySpowner : MonoBehaviour
             //Debug.Log("newDire" + newDire);
             GameObject spown = Instantiate(spownObj);
             spown.GetComponent<OjamaScript>().InitPosDire(newPosition, newDire);
-            enemys.Add(spown);
+           // enemys.Add(spown);
             Destroy(collision.gameObject);
             return;
         }else if (collision.gameObject.tag == "Player")
