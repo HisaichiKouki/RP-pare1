@@ -32,6 +32,8 @@ public class PlayerScript : MonoBehaviour
 
     float scale;//speedやdistanceをスケールに合わせて調整する
 
+    private AudioSource pon;
+
     public float GetScale() { return scale; }
     public int GetAddCount() { return addCount; }
     public void AddSphere() { if (nowSpherCount < sphereLimit) { nowSpherCount++; } }
@@ -49,6 +51,8 @@ public class PlayerScript : MonoBehaviour
         shotPosition = transform.GetChild(0).gameObject;
         shotCount = 0;
         stopCount = 0;
+
+        pon= gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -80,8 +84,9 @@ public class PlayerScript : MonoBehaviour
                 shotCount = kShotCoolTime;
                 stopCount = kStopTime;
                 rigidbody_.velocity = new Vector3(0, jumpPower, 0);
-
                 nowSpherCount--;
+
+                pon.Play();
             }
            
            // Debug.Log("残段数" + nowSpherCount);
