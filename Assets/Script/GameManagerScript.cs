@@ -15,10 +15,13 @@ public class GameManagerScript : MonoBehaviour
 
     public GameObject finishText;
     bool isFinish;
+    float finishTimer;
+
     void Start()
     {
         gameTimer = MaxTime;
         isFinish = false;
+        finishTimer = 2;
     }
 
     // Update is called once per frame
@@ -48,6 +51,14 @@ public class GameManagerScript : MonoBehaviour
             {
                 isFinish = true;
                 finishText.SetActive(true);
+            }
+            if (isFinish)
+            {
+                finishTimer -= Time.deltaTime;
+                if(finishTimer <= 0)
+                {
+                    FadeManager.Instance.LoadScene("ResultScene", 1.0f);
+                }
             }
         }
         text.SetText("Time" + gameTimer.ToString("f1"));
