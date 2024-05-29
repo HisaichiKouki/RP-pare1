@@ -48,11 +48,11 @@ public class OjamaScript : MonoBehaviour
        
         if (fieldScoreScript.IsScored())
         {
-            if (transform.GetChild(0).gameObject.activeSelf)
+            if (transform.GetChild(1).gameObject.activeSelf)
             {
                 isDead = true;
               
-                particleprefab.transform.position= transform.GetChild(0).gameObject.transform.position;
+                particleprefab.transform.position= transform.GetChild(1).gameObject.transform.position;
                 particleprefab.Play();
                 transform.GetChild(1).transform.localScale = Vector3.zero;
             }
