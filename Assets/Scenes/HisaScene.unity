@@ -2263,6 +2263,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8258378064083107086, guid: 93a5f74e91ee9014fb76a71684d0815c, type: 3}
+      propertyPath: speed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8258378064083107086, guid: 93a5f74e91ee9014fb76a71684d0815c, type: 3}
       propertyPath: addCount
       value: 3
       objectReference: {fileID: 0}
