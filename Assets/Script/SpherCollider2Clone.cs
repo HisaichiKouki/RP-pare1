@@ -10,6 +10,9 @@ public class SpherCollider2Clone : MonoBehaviour
     GameObject parent;
     FieldScoreScript parentScript;
     GameObject hitObj;
+
+    public GameObject particleObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +26,7 @@ public class SpherCollider2Clone : MonoBehaviour
     {
         if (parentScript.IsScored())
         {
-            if (hitObj!=null)
+            if (hitObj != null)
             {
                 if (hitObj.GetComponent<CloneScript>().GetIsMaxScale())
                 {
@@ -31,9 +34,7 @@ public class SpherCollider2Clone : MonoBehaviour
                     {
                         parentScript.AddScoreCount(1);
                         Debug.Log("addScore 1");
-                        particleprefab.Play();
-
-
+                        Instantiate(particleObject, this.transform.position, Quaternion.Euler(-90f, 0f, 0f));
                         Destroy(hitObj);
                     }
                     else if (this.tag == "CollisionSphere_OutSide")
@@ -44,7 +45,7 @@ public class SpherCollider2Clone : MonoBehaviour
                         Destroy(hitObj);
                     }
                 }
-                
+
             }
         }
     }

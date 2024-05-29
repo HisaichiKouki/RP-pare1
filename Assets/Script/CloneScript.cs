@@ -13,7 +13,6 @@ public class CloneScript : MonoBehaviour
     private bool isMaxScale;
     float holeSize;
     [SerializeField] bool isChange = true;
-
     void Start()
     {
         targetObj = GameObject.Find("Field3");
@@ -42,7 +41,6 @@ public class CloneScript : MonoBehaviour
                     //サイズがマックスになったら色を変える
                     SetMatColor(transform.GetComponent<MeshRenderer>(), Color.yellow);
                 }
-
                 
             }
         }

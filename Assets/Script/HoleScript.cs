@@ -65,6 +65,7 @@ public class HoleScript : MonoBehaviour
     {
         if (other.gameObject == hitObj)
         {
+            
             hitObj = null;
         }
     }
