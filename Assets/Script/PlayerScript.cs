@@ -36,6 +36,7 @@ public class PlayerScript : MonoBehaviour
     public int GetAddCount() { return addCount; }
     public void AddSphere() { if (nowSpherCount < sphereLimit) { nowSpherCount++; } }
     public int GetnowSphere() { return nowSpherCount; }
+    public void SetnowSphere(int value) {  nowSpherCount=value; }
     // Start is called before the first frame update
     void Start()
     {

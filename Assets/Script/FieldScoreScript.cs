@@ -15,6 +15,8 @@ public class FieldScoreScript : MonoBehaviour
     GameManagerScript gameManagerScript;
 
     public TextMeshProUGUI scoreText;
+
+    PlayerScript playerScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class FieldScoreScript : MonoBehaviour
         gameManagerScript = FindAnyObjectByType<GameManagerScript>();
         isScored = false;
         calculation = false;
+        playerScript=FindAnyObjectByType<PlayerScript>();
     }
 
     // Update is called once per frame
@@ -38,6 +41,10 @@ public class FieldScoreScript : MonoBehaviour
         {
             if (isScored)
             {
+                if (playerScript.GetnowSphere() > 5)
+                {
+                    playerScript.SetnowSphere(5);
+                }
                 calculation = true;
                 if (scoreCount != 0)
                 {
