@@ -31,10 +31,10 @@ public class GameManagerScript : MonoBehaviour
         CountDown();
         if (isFinish)
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SceneManager.LoadScene("ResultScene");
-            }
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    SceneManager.LoadScene("ResultScene");
+            //}
         }
 
     }
@@ -42,6 +42,11 @@ public class GameManagerScript : MonoBehaviour
     {
         if (isFinish)
         {
+            finishTimer -= Time.deltaTime;
+            if (finishTimer <= 0)
+            {
+                FadeManager.Instance.LoadScene("ResultScene", 1.0f);
+            }
             return;
         }
         else
@@ -51,14 +56,6 @@ public class GameManagerScript : MonoBehaviour
             {
                 isFinish = true;
                 finishText.SetActive(true);
-            }
-            if (isFinish)
-            {
-                finishTimer -= Time.deltaTime;
-                if(finishTimer <= 0)
-                {
-                    FadeManager.Instance.LoadScene("ResultScene", 1.0f);
-                }
             }
         }
         text.SetText("Time" + gameTimer.ToString("f1"));

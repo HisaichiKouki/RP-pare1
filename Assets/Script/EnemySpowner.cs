@@ -12,6 +12,8 @@ public class EnemySpowner : MonoBehaviour
     private FieldScoreScript fieldScript;
     GameObject timerObj;
 
+    public GameObject particleObject;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class EnemySpowner : MonoBehaviour
             {
                 if (enemys[i].transform.GetChild(0).gameObject.activeSelf)
                 {
+                    Instantiate(particleObject, enemys[i].transform.position, Quaternion.Euler(-90f, 0f, 0f));
                     Destroy(enemys[i].gameObject);
                     enemys.RemoveAt(i);
                 }
