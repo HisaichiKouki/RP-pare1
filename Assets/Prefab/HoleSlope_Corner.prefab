@@ -583,6 +583,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21fc2dafb22e1ae4fb8fef684c016dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleObject: {fileID: 5042953322513848706, guid: 982132a28e9925147b6ac5301136853c, type: 3}
 --- !u!4 &7389216764503867906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
