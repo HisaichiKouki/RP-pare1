@@ -17,6 +17,8 @@ public class FieldScoreScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
 
     PlayerScript playerScript;
+
+    private AudioSource scoreSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class FieldScoreScript : MonoBehaviour
         isScored = false;
         calculation = false;
         playerScript=FindAnyObjectByType<PlayerScript>();
+
+        scoreSound=gameObject.GetComponent<AudioSource>(); 
     }
 
     // Update is called once per frame
@@ -49,6 +53,8 @@ public class FieldScoreScript : MonoBehaviour
                 if (scoreCount != 0)
                 {
                     {
+                        scoreSound.Play();
+
                         score = scoreCount * 10;
                         scoreCount = 0;
                         tortalScore += score;
