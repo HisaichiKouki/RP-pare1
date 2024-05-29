@@ -6,12 +6,12 @@ using static UnityEngine.ParticleSystem;
 public class SpherCollider2Clone : MonoBehaviour
 {
     [SerializeField] private ParticleSystem particleprefab;
-    ParticleSystem particle;
+    //ParticleSystem particle;
     GameObject parent;
     FieldScoreScript parentScript;
     GameObject hitObj;
 
-    public GameObject particleObject;
+   // public GameObject particleObject;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class SpherCollider2Clone : MonoBehaviour
                     {
                         parentScript.AddScoreCount(1);
                         Debug.Log("addScore 1");
-                        Instantiate(particleObject, this.transform.position, Quaternion.Euler(-90f, 0f, 0f));
+                        particleprefab.Play();
                         Destroy(hitObj);
                     }
                     else if (this.tag == "CollisionSphere_OutSide")
