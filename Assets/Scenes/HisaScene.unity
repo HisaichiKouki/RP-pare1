@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d708014d5508fc4d91d44af670fe152, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxTime: 1000
+  MaxTime: 60
   damegeCount: 10
   text: {fileID: 1938649182}
   finishText: {fileID: 1078490492}

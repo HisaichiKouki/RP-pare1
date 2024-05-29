@@ -29,7 +29,7 @@ public class CloneScript : MonoBehaviour
             holeSize -= 0.02f;//拡大サイズを少し小さくしてガクガクしないようにする
             if (transform.localScale.x < holeSize)
             {
-                transform.localScale += new Vector3(0.001f, 0.001f, 0.001f);
+                transform.localScale += new Vector3(0.4f, 0.4f, 0.4f)*Time.deltaTime/2;
                 
             }
             else
