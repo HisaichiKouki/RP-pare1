@@ -6,6 +6,7 @@ using static UnityEngine.ParticleSystem;
 public class SpherCollider2Clone : MonoBehaviour
 {
     [SerializeField] private ParticleSystem particleprefab;
+    [SerializeField] private ParticleSystem particleprefab2;
     //ParticleSystem particle;
     GameObject parent;
     FieldScoreScript parentScript;
@@ -42,6 +43,8 @@ public class SpherCollider2Clone : MonoBehaviour
                         parentScript.AddScoreCount(10);
                         Debug.Log("addScore 2");
                         particleprefab.Play();
+                        if(particleprefab2!=null) particleprefab2.Play();
+                        
                         Destroy(hitObj);
                     }
                 }
