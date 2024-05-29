@@ -47,5 +47,6 @@ public class MoveCountcript : MonoBehaviour
         }
     }
 
+    public int GetmoveCount() { return moveCount; }
 
 }
