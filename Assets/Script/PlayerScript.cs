@@ -69,17 +69,21 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetButtonDown("Jump"))
         {
-            Debug.Log("Shot");
-            GameObject clon = Instantiate(cloneObj);
-            clon.transform.position = shotPosition.transform.position;
-            Vector3 newVector = rigidbody_.velocity * shotSpeed;
-            newVector.y = -jumpPower;
-            clon.GetComponent<Rigidbody>().velocity = newVector;
-            shotCount = kShotCoolTime;
-            stopCount = kStopTime;
-            rigidbody_.velocity = new Vector3(0, jumpPower, 0);
+            if(nowSpherCount>0)
+            {
+                Debug.Log("Shot");
+                GameObject clon = Instantiate(cloneObj);
+                clon.transform.position = shotPosition.transform.position;
+                Vector3 newVector = rigidbody_.velocity * shotSpeed;
+                newVector.y = -jumpPower;
+                clon.GetComponent<Rigidbody>().velocity = newVector;
+                shotCount = kShotCoolTime;
+                stopCount = kStopTime;
+                rigidbody_.velocity = new Vector3(0, jumpPower, 0);
 
-            nowSpherCount--;
+                nowSpherCount--;
+            }
+           
            // Debug.Log("écíiêî" + nowSpherCount);
         }
     }

@@ -40,6 +40,7 @@ public class SpherCollider2Clone : MonoBehaviour
                     {
                         parentScript.AddScoreCount(10);
                         Debug.Log("addScore 2");
+                        particleprefab.Play();
                         Destroy(hitObj);
                     }
                 }
