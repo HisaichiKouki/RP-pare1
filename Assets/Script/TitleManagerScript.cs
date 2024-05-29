@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class TitleManagerScript : MonoBehaviour
 {
-    public string nextSceneName;
+    //public string nextSceneName;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -17,7 +17,8 @@ public class TitleManagerScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Jump"))
         {
-            SceneManager.LoadScene(nextSceneName);
+            //SceneManager.LoadScene(nextSceneName);
+            FadeManager.Instance.LoadScene("HisaScene", 1.0f);
         }
     }
 }
