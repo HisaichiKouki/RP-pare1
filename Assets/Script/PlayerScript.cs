@@ -119,7 +119,7 @@ public class PlayerScript : MonoBehaviour
         }
         else
         {
-            rigidbody_.velocity = new Vector3(velocity.x*5, rigidbody_.velocity.y, velocity.z * 5);
+            rigidbody_.velocity = new Vector3(velocity.x, rigidbody_.velocity.y, velocity.z);
         }
 
     }
