@@ -54,7 +54,7 @@ public class FieldScoreScript : MonoBehaviour
                         tortalScore += score;
                     }
                 }
-                Debug.Log("nowScore=" + tortalScore);
+                //Debug.Log("nowScore=" + tortalScore);
                 scoreText.SetText("Score:" + tortalScore);
             }
         }

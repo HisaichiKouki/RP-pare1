@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class SpherCollider2Clone : MonoBehaviour
 {
-
+    [SerializeField] private ParticleSystem particleprefab;
+    ParticleSystem particle;
     GameObject parent;
     FieldScoreScript parentScript;
     GameObject hitObj;
@@ -29,6 +31,9 @@ public class SpherCollider2Clone : MonoBehaviour
                     {
                         parentScript.AddScoreCount(1);
                         Debug.Log("addScore 1");
+                        particleprefab.Play();
+
+
                         Destroy(hitObj);
                     }
                     else if (this.tag == "CollisionSphere_OutSide")
