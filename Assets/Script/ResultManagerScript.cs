@@ -29,7 +29,7 @@ public class ResultManagerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        scoreText= scoreObj.gameObject.GetComponent<TextMeshProUGUI>();
+        scoreText = scoreObj.gameObject.GetComponent<TextMeshProUGUI>();
         nowScore = 0;
         easeT = 0;
         isRetrySelect = true;
@@ -46,10 +46,10 @@ public class ResultManagerScript : MonoBehaviour
 
     void ScoreCountUP()
     {
-        if (easeT>=1) { return; }
+        if (easeT >= 1) { return; }
         easeT += Time.deltaTime / MaxEaseTime;
-        if (easeT >= 1) { easeT=1; }
-        nowScore =(int)Mathf.Lerp(0,finalScore, EaseOutQuart(easeT));
+        if (easeT >= 1) { easeT = 1; }
+        nowScore = (int)Mathf.Lerp(0, finalScore, EaseOutQuart(easeT));
     }
 
     void SceneSelect()
@@ -88,10 +88,12 @@ public class ResultManagerScript : MonoBehaviour
             if (isRetrySelect)
             {
                 Debug.Log("retry");
+                FadeManager.Instance.LoadScene("HisaScene", 1.0f);
             }
             else
             {
                 Debug.Log("title");
+                FadeManager.Instance.LoadScene("TitleScene", 1.0f);
             }
         }
     }
