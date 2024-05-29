@@ -376,94 +376,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Field3
       objectReference: {fileID: 0}
+    - target: {fileID: 7197630444463652419, guid: d90e173fc5e3f874ab15ad6b8416c593, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d90e173fc5e3f874ab15ad6b8416c593, type: 3}
---- !u!1001 &545242560
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.588
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -4.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90
-      objectReference: {fileID: 0}
-    - target: {fileID: 4528447732489899677, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269674700565028931, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_Name
-      value: CollisonSphere
-      objectReference: {fileID: 0}
-    - target: {fileID: 5269674700565028931, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      propertyPath: m_TagString
-      value: CollisionSphere_OutSide
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5269674700565028931, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 568013370}
-  m_SourcePrefab: {fileID: 100100000, guid: 4dc24d01884253340a3865670939d43c, type: 3}
---- !u!1 &568013369 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5269674700565028931, guid: 4dc24d01884253340a3865670939d43c, type: 3}
-  m_PrefabInstance: {fileID: 545242560}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &568013370
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 568013369}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21fc2dafb22e1ae4fb8fef684c016dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particleprefab: {fileID: 0}
-  particleprefab2: {fileID: 0}
 --- !u!1 &624586475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1344,6 +1265,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ojyama
       objectReference: {fileID: 0}
+    - target: {fileID: 5431129493057215505, guid: a38ebb62b2aeed2428c53aee29867668, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2168,6 +2093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpowner
       objectReference: {fileID: 0}
+    - target: {fileID: 7473143752081095139, guid: 552ae3df9e1ddc043b80be2d4c7f4dea, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2225,6 +2154,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerMaster
       objectReference: {fileID: 0}
+    - target: {fileID: 5212666971715221308, guid: 93a5f74e91ee9014fb76a71684d0815c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2242,7 +2175,6 @@ SceneRoots:
   - {fileID: 1787502799}
   - {fileID: 1720238044}
   - {fileID: 389634925}
-  - {fileID: 545242560}
   - {fileID: 264581081}
   - {fileID: 882977053}
   - {fileID: 1295457049}
